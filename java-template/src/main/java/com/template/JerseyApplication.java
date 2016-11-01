@@ -1,4 +1,4 @@
-package template;
+package com.template;
 
 import org.glassfish.jersey.jackson.JacksonFeature;
 import org.glassfish.jersey.server.ResourceConfig;
