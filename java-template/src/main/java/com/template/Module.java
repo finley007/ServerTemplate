@@ -22,4 +22,10 @@ public class Module {
         return "serviceB:" + param;
     }
 
+    @GET
+    @Path("/serviceC")
+    public String serviceC(@QueryParam("param1") String param1, @QueryParam("param2") String param2) {
+        return "serviceC:" + param1 + "|" + param2;
+    }
+
 }
