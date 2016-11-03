@@ -1,13 +1,11 @@
-package com.template;
+package com.template.module1;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
-import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Context;
 import java.util.Enumeration;
-import java.util.Map;
 
 /**
  * Created by liuli on 11/2/2016.

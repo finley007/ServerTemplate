@@ -1,4 +1,4 @@
-package com.template;
+package com.template.module;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

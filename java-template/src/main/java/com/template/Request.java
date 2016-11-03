@@ -1,4 +1,4 @@
-package com.template.request;
+package com.template;
 
 /**
  * Created by liuli on 11/3/2016.
