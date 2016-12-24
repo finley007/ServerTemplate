@@ -15,6 +15,7 @@ dependencies {
     // Following aren't needed atm, but will be in later parts.
     compile 'org.glassfish.jersey.media:jersey-media-json-jackson:2.6'
     compile 'javax.servlet:servlet-api:2.5'
+    compile 'net.sf.json-lib:json-lib:2.2.3:jdk15'
 
     testCompile group: 'junit', name: 'junit', version: '4.11'
 }
