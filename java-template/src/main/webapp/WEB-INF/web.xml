@@ -4,8 +4,19 @@
 
     <display-name>project-template</display-name>
 
+    <listener>
+        <listener-class>
+            org.springframework.web.context.ContextLoaderListener
+        </listener-class>
+    </listener>
+
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:spring/applicationContext.xml</param-value>
+    </context-param>
+
     <servlet>
-        <servlet-name>module</servlet-name>
+        <servlet-name>jersey-serlvet</servlet-name>
         <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
         <init-param>
             <param-name>javax.ws.rs.Application</param-name>
@@ -18,7 +29,7 @@
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
-        <servlet-name>module</servlet-name>
+        <servlet-name>jersey-serlvet</servlet-name>
         <url-pattern>/*</url-pattern>
     </servlet-mapping>
 
