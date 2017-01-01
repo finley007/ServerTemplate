@@ -1,6 +1,6 @@
 package com.template.module2;
 
-import com.template.BaseRequest;
+import com.template.Request;
 import com.template.module2.service.Service1;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -18,12 +18,13 @@ import javax.ws.rs.Produces;
 public class Module2 {
 
     @Autowired
-    private Service1 service1;
+    Service1 service1;
 
     @GET
+    @Path("/service1")
     @Produces("application/json")
     public String service1() {
-        return service1.function1(new BaseRequest() {
+        return service1.function1(new Request() {
             @Override
             public void from(String strReq) {
 

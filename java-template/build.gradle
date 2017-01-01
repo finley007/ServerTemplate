@@ -19,22 +19,21 @@ sourceCompatibility = 1.5
 repositories {
 //    mavenLocal()
 //    maven {url "http://maven.oschina.net/content/groups/public/"}
-//    mavenCentral()
-    jcenter()
+    mavenCentral()
+//    jcenter()
 }
 
 dependencies {
 
     compile 'org.glassfish.jersey.containers:jersey-container-servlet:2.6'
-    // Following aren't needed atm, but will be in later parts.
     compile 'org.glassfish.jersey.media:jersey-media-json-jackson:2.6'
-    compile 'javax.servlet:servlet-api:2.5'
+//    compile 'javax.servlet:servlet-api:2.5' dependent by jersey-spring
     compile 'net.sf.json-lib:json-lib:2.2.3:jdk15'
     compile 'org.springframework:spring-core:4.3.5.RELEASE'
     compile 'org.springframework:spring-beans:4.3.5.RELEASE'
     compile 'org.springframework:spring-context:4.3.5.RELEASE'
     compile 'org.springframework:spring-web:4.3.5.RELEASE'
-    compile 'org.gradle.api.plugins:gradle-tomcat-plugin:1.2.5'
+    compile group: 'com.sun.jersey.contribs', name: 'jersey-spring', version: '1.19'
 
     def tomcatVersion = '7.0.11'
     tomcat    "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",

@@ -1,7 +1,5 @@
 package com.template.module2.service;
 
-import com.template.Request;
-
 /**
  * Created by finley on 12/31/16.
  */
