@@ -7,6 +7,7 @@
        http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
     <context:component-scan base-package="com.template.*" />
+    <bean id="serializer" class="com.template.serialize.JsonSerializer" />
     <bean id="service1" class="com.template.module2.service.Service1Impl" />
 
 </beans>

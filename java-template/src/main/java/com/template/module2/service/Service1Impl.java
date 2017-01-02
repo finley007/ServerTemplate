@@ -1,11 +1,15 @@
 package com.template.module2.service;
 
+import com.template.module2.request.Module2Service1Request;
+import com.template.module2.response.Module2Service2Response;
+
 /**
  * Created by finley on 12/31/16.
  */
 public class Service1Impl implements Service1 {
 
-    public String function1(Request request) {
-        return "This is service 1 function 1";
+    public Module2Service2Response function1(Module2Service1Request request) {
+        return (Module2Service2Response)new Module2Service2Response().setStatus(200);
     }
+
 }
