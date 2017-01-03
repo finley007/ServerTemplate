@@ -34,6 +34,8 @@ dependencies {
     compile 'org.springframework:spring-context:4.3.5.RELEASE'
     compile 'org.springframework:spring-web:4.3.5.RELEASE'
     compile group: 'com.sun.jersey.contribs', name: 'jersey-spring', version: '1.19'
+    compile group: 'mysql', name: 'mysql-connector-java', version: '6.0.5'
+    compile group: 'org.mybatis', name: 'mybatis', version: '3.4.1'
 
     def tomcatVersion = '7.0.11'
     tomcat    "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
