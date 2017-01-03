@@ -7,14 +7,14 @@ import com.template.serialize.Serializer;
  */
 public abstract class Response {
 
-    protected int status;
+    protected String content;
 
-    public int getStatus() {
-        return status;
+    public String getContent() {
+        return content;
     }
 
-    public Response setStatus(int status) {
-        this.status = status;
-        return this;
+    public void setContent(String content) {
+        this.content = content;
     }
+
 }

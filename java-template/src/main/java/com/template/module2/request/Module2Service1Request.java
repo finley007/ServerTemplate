@@ -17,13 +17,13 @@ public class Module2Service1Request extends Request {
         this.field1 = field1;
     }
 
-    public String getField2() {
+    public Double getField2() {
         return field2;
     }
 
-    public void setField2(String field2) {
+    public void setField2(Double field2) {
         this.field2 = field2;
     }
 
-    private String field2;
+    private Double field2;
 }

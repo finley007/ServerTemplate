@@ -9,7 +9,7 @@ import com.template.module2.response.Module2Service2Response;
 public class Service1Impl implements Service1 {
 
     public Module2Service2Response function1(Module2Service1Request request) {
-        return (Module2Service2Response)new Module2Service2Response().setStatus(200);
+        return new Module2Service2Response();
     }
 
 }
