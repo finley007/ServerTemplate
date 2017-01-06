@@ -43,7 +43,7 @@ public class Module2 {
         Module2Service1Request msrequest = serializer.deserializeToBean(request, Module2Service1Request.class);
         System.out.println(msrequest.getField1());
         System.out.println(msrequest.getField2());
-        Module2Service2Response response = service1.function1(new Module2Service1Request());
+        Module2Service2Response response = service1.function1(msrequest);
         return Response.status(Response.Status.OK).entity(serializer.serializeFromBean(response)).build();
     }
 
