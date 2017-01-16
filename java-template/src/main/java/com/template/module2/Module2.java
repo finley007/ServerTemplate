@@ -1,6 +1,7 @@
 package com.template.module2;
 
 import com.template.module2.request.Module2Service1Request;
+import com.template.module2.response.Module2Service1Response;
 import com.template.module2.response.Module2Service2Response;
 import com.template.module2.service.Service1;
 import com.template.serialize.Serializer;
@@ -43,7 +44,16 @@ public class Module2 {
         Module2Service1Request msrequest = serializer.deserializeToBean(request, Module2Service1Request.class);
         System.out.println(msrequest.getField1());
         System.out.println(msrequest.getField2());
-        Module2Service2Response response = service1.function1(msrequest);
+        Module2Service1Response response = service1.function1(msrequest);
+        return Response.status(Response.Status.OK).entity(serializer.serializeFromBean(response)).build();
+    }
+
+    @GET
+    @Path("/service2")
+    @Produces("application/json")
+    public Response service2(@QueryParam("field1") String field1) {
+        System.out.println(field1);
+        Module2Service2Response response = service1.function2(field1);
         return Response.status(Response.Status.OK).entity(serializer.serializeFromBean(response)).build();
     }
 

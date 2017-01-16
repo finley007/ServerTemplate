@@ -1,6 +1,7 @@
 package com.template.module2.service;
 
 import com.template.module2.request.Module2Service1Request;
+import com.template.module2.response.Module2Service1Response;
 import com.template.module2.response.Module2Service2Response;
 
 /**
@@ -8,6 +9,8 @@ import com.template.module2.response.Module2Service2Response;
  */
 public interface Service1 {
 
-    public Module2Service2Response function1(Module2Service1Request request);
+    public Module2Service1Response function1(Module2Service1Request request);
+    public Module2Service2Response function2(String field1);
 
 }
+
