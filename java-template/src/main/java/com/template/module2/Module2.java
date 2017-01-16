@@ -1,5 +1,6 @@
 package com.template.module2;
 
+import com.template.log.LogUtil;
 import com.template.module2.request.Module2Service1Request;
 import com.template.module2.response.Module2Service1Response;
 import com.template.module2.response.Module2Service2Response;
@@ -40,12 +41,12 @@ public class Module2 {
     @Consumes("application/json")
     @Produces("application/json")
     public Response service1(@RequestParam String request) {
-        System.out.println(request);
+        LogUtil.info(this.getClass(), "Service 1 request: {} ", request);
         Module2Service1Request msrequest = serializer.deserializeToBean(request, Module2Service1Request.class);
-        System.out.println(msrequest.getField1());
-        System.out.println(msrequest.getField2());
         Module2Service1Response response = service1.function1(msrequest);
-        return Response.status(Response.Status.OK).entity(serializer.serializeFromBean(response)).build();
+        String responseContent = serializer.serializeFromBean(response);
+        LogUtil.info(this.getClass(), "Service 1 response: {} ", responseContent);
+        return Response.status(Response.Status.OK).entity(responseContent).build();
     }
 
     @GET
