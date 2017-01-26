@@ -23,8 +23,6 @@ public class Service1Impl implements Service1 {
         Model2 model2 = new Model2();
         model2.setField1(request.getField1());
         model2.setField2(request.getField2());
-        System.out.println(model2.getField1());
-        System.out.println(model2.getField2());
         this.module2Dao.addModel2(model2);
         return new Module2Service1Response();
     }
