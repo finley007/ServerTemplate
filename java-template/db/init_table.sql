@@ -1,6 +1,6 @@
 #Authentication tables
-drop table if exists user;
-create table user (
+drop table if exists users;
+create table users (
     username varchar(20) not null,
     password varchar(20) not null,
     email varchar(20),
@@ -9,6 +9,26 @@ create table user (
     primary key(username)
 );
 
-insert into user (username, password, create_time) values ('admin', 'admin', current_timestamp());
+drop table if exists roles;
+create table roles (
+    role varchar(20) not null,
+    is_temp int(1) not null default 0,
+    remark varchar(255),
+    primary key(role)
+);
+
+drop table if exists user_role;
+create table user_role (
+    id int(10) AUTO_INCREMENT,
+    username varchar(20),
+    role varchar(20),
+    primary key(id),
+    FOREIGN KEY(username) REFERENCES users(username),
+    FOREIGN KEY(role) REFERENCES roles(role)
+);
+
+insert into users (username, password, create_time) values ('admin', 'admin', current_timestamp());
+insert into roles values ('admin', 0, '');
+insert into user_role (username, role) values ('admin', 'admin');
 
 create table model2 (field1 VARCHAR(20), double(10,2));

@@ -17,4 +17,8 @@ public class LogUtil {
     public static void info(Class clz, String format, Object para) {
         logger.info(format, para);
     }
+
+    public static void error(Class clz, String info, Throwable t) {
+        logger.error(info, t);
+    }
 }

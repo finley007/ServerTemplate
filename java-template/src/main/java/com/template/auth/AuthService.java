@@ -1,5 +1,6 @@
 package com.template.auth;
 
+import com.template.auth.request.AuthRequest;
 import com.template.auth.response.AuthResponse;
 
 /**
@@ -7,6 +8,6 @@ import com.template.auth.response.AuthResponse;
  */
 public interface AuthService {
 
-    public AuthResponse authenticate(String username, String password);
+    public AuthResponse authenticate(AuthRequest request);
 
 }

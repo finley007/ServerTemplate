@@ -24,7 +24,7 @@
             <property name="trimStrings" value="true" />
         </javaModelGenerator>
 
-        <sqlMapGenerator targetPackage="test.xml"  targetProject="/Users/finley/Finley/workspace/java/ServerTemplate/java-template/src/main/java">
+        <sqlMapGenerator targetPackage="com.template.dao"  targetProject="/Users/finley/Finley/workspace/java/ServerTemplate/java-template/src/main/java">
             <property name="enableSubPackages" value="true" />
         </sqlMapGenerator>
 
