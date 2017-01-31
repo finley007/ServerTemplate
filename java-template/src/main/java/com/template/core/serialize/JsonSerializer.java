@@ -1,4 +1,4 @@
-package com.template.serialize;
+package com.template.core.serialize;
 
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;

@@ -1,6 +1,6 @@
-package com.template.auth.impl;
+package com.template.core.auth.impl;
 
-import com.template.auth.UserService;
+import com.template.core.auth.UserService;
 import com.template.dao.UserDao;
 import com.template.model.User;
 import org.springframework.stereotype.Service;

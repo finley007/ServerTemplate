@@ -1,9 +1,9 @@
-package com.template.auth;
+package com.template.core.auth;
 
-import com.template.auth.request.AuthRequest;
-import com.template.auth.response.AuthResponse;
-import com.template.log.LogUtil;
-import com.template.serialize.Serializer;
+import com.template.core.auth.request.AuthRequest;
+import com.template.core.auth.response.AuthResponse;
+import com.template.core.log.LogUtil;
+import com.template.core.serialize.Serializer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;

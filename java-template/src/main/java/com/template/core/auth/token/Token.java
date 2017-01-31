@@ -1,6 +1,6 @@
-package com.template.auth.token;
+package com.template.core.auth.token;
 
-import com.template.tool.Properties;
+import com.template.core.tool.Properties;
 import org.apache.shiro.subject.Subject;
 
 import java.math.BigInteger;

@@ -1,4 +1,4 @@
-package com.template.serialize;
+package com.template.core.serialize;
 
 import java.util.List;
 import java.util.Map;

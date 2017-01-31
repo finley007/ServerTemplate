@@ -1,10 +1,10 @@
-package com.template.auth.impl;
+package com.template.core.auth.impl;
 
-import com.template.auth.AuthService;
-import com.template.auth.request.AuthRequest;
-import com.template.auth.response.AuthResponse;
-import com.template.auth.token.Token;
-import com.template.log.LogUtil;
+import com.template.core.auth.AuthService;
+import com.template.core.auth.request.AuthRequest;
+import com.template.core.auth.response.AuthResponse;
+import com.template.core.auth.token.Token;
+import com.template.core.log.LogUtil;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;

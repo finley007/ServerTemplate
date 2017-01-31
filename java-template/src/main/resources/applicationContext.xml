@@ -12,7 +12,7 @@
     <tx:annotation-driven transaction-manager="transactionManager" />
     <context:component-scan base-package="com.template.*" />
 
-    <bean id="serializer" class="com.template.serialize.JsonSerializer" />
+    <bean id="serializer" class="com.template.core.serialize.JsonSerializer" />
     <bean id="service1" class="com.template.module2.service.Service1Impl" />
 
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
@@ -41,7 +41,7 @@
 
     <!-- Define the Shiro Realm implementation you want to use to connect to your back-end -->
     <!-- security datasource: -->
-    <bean id="dbRealm" class="com.template.auth.realm.DBRealm"/>
+    <bean id="dbRealm" class="com.template.core.auth.realm.DBRealm"/>
 
     <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
         <!-- Single realm app.  If you have multiple realms, use the 'realms' property instead. -->

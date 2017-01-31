@@ -1,7 +1,7 @@
-package com.template.auth;
+package com.template.core.auth;
 
-import com.template.auth.request.AuthRequest;
-import com.template.auth.response.AuthResponse;
+import com.template.core.auth.request.AuthRequest;
+import com.template.core.auth.response.AuthResponse;
 
 /**
  * Created by finley on 1/23/17.

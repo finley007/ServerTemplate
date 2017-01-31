@@ -1,11 +1,11 @@
 package com.template.module2;
 
-import com.template.log.LogUtil;
+import com.template.core.log.LogUtil;
 import com.template.module2.request.Module2Service1Request;
 import com.template.module2.response.Module2Service1Response;
 import com.template.module2.response.Module2Service2Response;
 import com.template.module2.service.Service1;
-import com.template.serialize.Serializer;
+import com.template.core.serialize.Serializer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;

@@ -1,4 +1,4 @@
-package com.template.auth.request;
+package com.template.core.auth.request;
 
 /**
  * Created by finley on 1/29/17.

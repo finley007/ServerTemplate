@@ -1,6 +1,6 @@
-package com.template.auth.realm;
+package com.template.core.auth.realm;
 
-import com.template.auth.UserService;
+import com.template.core.auth.UserService;
 import com.template.model.User;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;

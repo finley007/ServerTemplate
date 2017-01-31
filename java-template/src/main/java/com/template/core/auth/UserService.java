@@ -1,4 +1,4 @@
-package com.template.auth;
+package com.template.core.auth;
 
 import com.template.model.User;
 

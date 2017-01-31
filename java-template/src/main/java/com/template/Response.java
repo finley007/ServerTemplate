@@ -1,7 +1,5 @@
 package com.template;
 
-import com.template.serialize.Serializer;
-
 /**
  * Created by liuli on 11/7/2016.
  */

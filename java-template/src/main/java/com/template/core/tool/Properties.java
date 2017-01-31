@@ -1,7 +1,7 @@
-package com.template.tool;
+package com.template.core.tool;
 
 
-import com.template.log.LogUtil;
+import com.template.core.log.LogUtil;
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.PropertiesConfiguration;
 import org.apache.commons.configuration.reloading.FileChangedReloadingStrategy;
