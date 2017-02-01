@@ -1,5 +1,6 @@
 package com.template.module2;
 
+import com.template.core.auth.annotation.Secured;
 import com.template.core.log.LogUtil;
 import com.template.module2.request.Module2Service1Request;
 import com.template.module2.response.Module2Service1Response;
@@ -52,6 +53,7 @@ public class Module2 {
     @GET
     @Path("/service2")
     @Produces("application/json")
+    @Secured
     public Response service2(@QueryParam("field1") String field1) {
         System.out.println(field1);
         Module2Service2Response response = service1.function2(field1);

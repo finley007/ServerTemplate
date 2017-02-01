@@ -43,13 +43,12 @@ public class Token {
      * @param key
      * @return whether or not the token is present
      */
-    public static boolean touch(String key) {
+    public static Token touch(String key) {
         Token token = tokens.get(key);
-        if (token == null) {
-            return false;
+        if (token != null) {
+            token.setLastTouched(new Date());
         }
-        token.setLastTouched(new Date());
-        return true;
+        return token;
     }
 
     /**
