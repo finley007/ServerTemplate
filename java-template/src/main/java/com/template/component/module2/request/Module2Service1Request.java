@@ -1,4 +1,4 @@
-package com.template.module2.request;
+package com.template.component.module2.request;
 
 import com.template.Request;
 

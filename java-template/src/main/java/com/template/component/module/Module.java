@@ -1,4 +1,4 @@
-package com.template.module;
+package com.template.component.module;
 
 import org.springframework.stereotype.Component;
 

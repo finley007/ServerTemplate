@@ -1,4 +1,4 @@
-package com.template.module1;
+package com.template.component.module1;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.GET;

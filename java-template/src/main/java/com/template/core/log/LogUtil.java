@@ -18,7 +18,16 @@ public class LogUtil {
         logger.info(format, para);
     }
 
+    public static void debug(Class clz, String info) {
+        logger.debug(info);
+    }
+
+    public static void debug(Class clz, String format, Object para) {
+        logger.debug(format, para);
+    }
+
     public static void error(Class clz, String info, Throwable t) {
         logger.error(info, t);
     }
+
 }

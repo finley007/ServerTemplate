@@ -1,4 +1,4 @@
-package com.template.module2.response;
+package com.template.component.module2.response;
 
 import com.template.Response;
 

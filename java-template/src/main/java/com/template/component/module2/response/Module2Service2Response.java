@@ -1,8 +1,8 @@
-package com.template.module2.response;
+package com.template.component.module2.response;
 
 import com.template.Response;
 import com.template.model.Model2;
-import com.template.module2.Module2;
+import com.template.component.module2.Module2;
 
 /**
  * Created by finley on 1/16/17.

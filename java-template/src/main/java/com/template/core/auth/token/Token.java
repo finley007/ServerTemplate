@@ -6,6 +6,7 @@ import org.apache.shiro.subject.Subject;
 import java.math.BigInteger;
 import java.security.SecureRandom;
 import java.util.Date;
+import java.util.Enumeration;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -35,8 +36,15 @@ public class Token {
         setSubject(subject);
         tokens.put(key, this);
         tokenRemoverPool.schedule(new TokenRemover(key), getDelay() + SECOND, TimeUnit.MILLISECONDS);
+        traceTokens();
     }
 
+    private static void traceTokens() {
+        Enumeration<String> en = tokens.keys();
+        while (en.hasMoreElements()) {
+            System.out.println(en.nextElement());
+        }
+    }
     /**
      * Checks if token is still valid.
      * If it is - refreshes it's timer.
@@ -44,6 +52,7 @@ public class Token {
      * @return whether or not the token is present
      */
     public static Token touch(String key) {
+        traceTokens();
         Token token = tokens.get(key);
         if (token != null) {
             token.setLastTouched(new Date());

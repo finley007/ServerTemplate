@@ -1,15 +1,19 @@
-package com.template.module2.service;
+package com.template.component.module2.service;
 
 import com.template.dao.Module2Dao;
 import com.template.model.Model2;
-import com.template.module2.request.Module2Service1Request;
-import com.template.module2.response.Module2Service1Response;
-import com.template.module2.response.Module2Service2Response;
+import com.template.component.module2.request.Module2Service1Request;
+import com.template.component.module2.response.Module2Service1Response;
+import com.template.component.module2.response.Module2Service2Response;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 /**
  * Created by finley on 12/31/16.
  */
+@Component
+@Service("service1")
 public class Service1Impl implements Service1 {
 
     private Module2Dao module2Dao;

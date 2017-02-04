@@ -1,18 +1,21 @@
-package com.template.module2;
+package com.template.component.module2;
 
+import com.template.component.module2.request.Module2Service1Request;
+import com.template.component.module2.response.Module2Service1Response;
+import com.template.component.module2.response.Module2Service2Response;
+import com.template.component.module2.service.Service1;
 import com.template.core.auth.annotation.Secured;
 import com.template.core.log.LogUtil;
-import com.template.module2.request.Module2Service1Request;
-import com.template.module2.response.Module2Service1Response;
-import com.template.module2.response.Module2Service2Response;
-import com.template.module2.service.Service1;
 import com.template.core.serialize.Serializer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.*;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.Response;
 
 /**
@@ -54,8 +57,7 @@ public class Module2 {
     @Path("/service2")
     @Produces("application/json")
     @Secured
-    public Response service2(@QueryParam("field1") String field1) {
-        System.out.println(field1);
+    public Response service2(@Context HttpServletRequest req, @Context HttpServletResponse res, @QueryParam("field1") String field1) {
         Module2Service2Response response = service1.function2(field1);
         return Response.status(Response.Status.OK).entity(serializer.serializeFromBean(response)).build();
     }
