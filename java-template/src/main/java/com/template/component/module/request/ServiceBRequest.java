@@ -1,7 +1,5 @@
 package com.template.component.module.request;
 
-import com.template.Request;
-
 /**
  * Created by liuli on 11/3/2016.
  */

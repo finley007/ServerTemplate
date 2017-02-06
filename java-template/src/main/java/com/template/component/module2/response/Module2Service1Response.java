@@ -1,7 +1,5 @@
 package com.template.component.module2.response;
 
-import com.template.Response;
-
 /**
  * Created by finley on 1/2/17.
  */
