@@ -3,7 +3,7 @@ package com.template.component.module2.request;
 /**
  * Created by finley on 1/2/17.
  */
-public class Module2Service1Request extends Request {
+public class Module2Service1Request {
 
     private String field1;
 

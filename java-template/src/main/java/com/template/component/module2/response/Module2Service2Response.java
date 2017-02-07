@@ -5,7 +5,7 @@ import com.template.model.Model2;
 /**
  * Created by finley on 1/16/17.
  */
-public class Module2Service2Response extends Response {
+public class Module2Service2Response {
 
     public Model2 getModel2() {
         return model2;

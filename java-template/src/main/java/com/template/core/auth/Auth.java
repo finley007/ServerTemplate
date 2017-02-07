@@ -3,7 +3,7 @@ package com.template.core.auth;
 import com.template.core.auth.request.AuthRequest;
 import com.template.core.auth.response.AuthResponse;
 import com.template.core.log.LogUtil;
-import com.template.core.serialize.Serializer;
+import com.template.core.payload.Payload;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
@@ -30,20 +30,18 @@ public class Auth {
         this.authService = service;
     }
 
-    private Serializer serializer;
-
-    @Autowired(required = true)
-    public void setSerializer(@Qualifier("serializer")Serializer serializer) {
-        this.serializer = serializer;
-    }
-
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response auth(@RequestParam String request) {
         LogUtil.info(this.getClass(), "Do authtication for user: {} ", request);
-        AuthResponse response = this.authService.authenticate(serializer.deserializeToBean(request, AuthRequest.class));
-        return Response.status(Response.Status.OK).entity(serializer.serializeFromBean(response)).build();
+        try {
+            AuthResponse response = this.authService.authenticate(new Payload(request).as(AuthRequest.class));
+            return Response.status(Response.Status.OK).entity(new Payload(response).from(AuthResponse.class)).build();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return Response.status(Response.Status.UNAUTHORIZED).build();
     }
 
 }

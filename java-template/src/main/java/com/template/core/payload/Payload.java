@@ -10,21 +10,29 @@ import com.mysql.cj.core.util.StringUtils;
 public class Payload {
 
     private String payload;
+    private Object bean;
 
     public Payload(String payload) throws Exception {
         if (StringUtils.isNullOrEmpty(payload) || StringUtils.isNullOrEmpty(payload.trim())) {
             throw new Exception();
         }
-
         this.payload = payload;
     }
 
-    public <T> T as(Class<T> aClass) throws Exception {
+    public Payload(Object bean) {
+        this.bean = bean;
+    }
+
+    public <T> T as(Class<T> clz) throws Exception {
         try {
-            return new Gson().fromJson(payload, aClass);
+            return new Gson().fromJson(payload, clz);
         } catch (JsonSyntaxException e) {
             throw new Exception();
         }
+    }
+
+    public <T> String from(Class<T> clz) throws Exception {
+        return new Gson().toJson(bean, clz);
     }
 
 }
