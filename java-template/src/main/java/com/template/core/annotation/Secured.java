@@ -1,6 +1,5 @@
-package com.template.core.auth.annotation;
+package com.template.core.annotation;
 
-import javax.ws.rs.NameBinding;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 

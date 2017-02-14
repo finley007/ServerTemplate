@@ -12,7 +12,6 @@ import org.springframework.stereotype.Service;
 /**
  * Created by finley on 12/31/16.
  */
-@Component
 @Service("service1")
 public class Service1Impl implements Service1 {
 

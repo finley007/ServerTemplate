@@ -1,7 +1,7 @@
 package com.template.core.aop;
 
-import com.template.core.auth.annotation.Secured;
-import com.template.core.auth.token.Token;
+import com.template.core.annotation.Secured;
+import com.template.core.token.Token;
 import com.template.core.log.LogUtil;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;

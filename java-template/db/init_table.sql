@@ -1,3 +1,11 @@
+#Configuration tables
+drop table if exists exception_code;
+create table exception_code (
+    class varchar(255) not null,
+    code  varchar(10) not null,
+    primary key(class, code)
+);
+
 #Authentication tables
 drop table if exists users;
 create table users (
@@ -27,6 +35,7 @@ create table user_role (
     FOREIGN KEY(role) REFERENCES roles(role)
 );
 
+insert into exception_code ()
 insert into users (username, password, create_time) values ('admin', 'admin', current_timestamp());
 insert into roles values ('admin', 0, '');
 insert into user_role (username, role) values ('admin', 'admin');

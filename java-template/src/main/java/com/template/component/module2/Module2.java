@@ -4,7 +4,7 @@ import com.template.component.module2.request.Module2Service1Request;
 import com.template.component.module2.response.Module2Service1Response;
 import com.template.component.module2.response.Module2Service2Response;
 import com.template.component.module2.service.Service1;
-import com.template.core.auth.annotation.Secured;
+import com.template.core.annotation.Secured;
 import com.template.core.log.LogUtil;
 import com.template.core.payload.Payload;
 import org.springframework.beans.factory.annotation.Autowired;

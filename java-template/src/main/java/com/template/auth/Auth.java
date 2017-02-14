@@ -1,9 +1,10 @@
-package com.template.core.auth;
+package com.template.auth;
 
-import com.template.core.auth.request.AuthRequest;
-import com.template.core.auth.response.AuthResponse;
+import com.template.core.exception.BusinessException;
+import com.template.core.exception.SystemException;
 import com.template.core.log.LogUtil;
 import com.template.core.payload.Payload;
+import com.template.core.response.ErrorResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
@@ -34,14 +35,17 @@ public class Auth {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response auth(@RequestParam String request) {
-        LogUtil.info(this.getClass(), "Do authtication for user: {} ", request);
+        LogUtil.info(this.getClass(), "Do authentication for user: {} ", request);
         try {
             AuthResponse response = this.authService.authenticate(new Payload(request).as(AuthRequest.class));
             return Response.status(Response.Status.OK).entity(new Payload(response).from(AuthResponse.class)).build();
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SystemException e) {
+            return Response.status(Response.Status.OK).entity(new ErrorResponse(e.toString()).build()).build();
+        } catch (BusinessException e) {
+            return Response.status(Response.Status.OK).entity(new ErrorResponse(e.toString()).build()).build();
+        } catch (Throwable t) {
+            return Response.status(Response.Status.OK).entity(new ErrorResponse(t.getMessage()).build()).build();
         }
-        return Response.status(Response.Status.UNAUTHORIZED).build();
     }
 
 }

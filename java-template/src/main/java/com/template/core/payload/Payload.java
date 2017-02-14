@@ -31,7 +31,7 @@ public class Payload {
         }
     }
 
-    public <T> String from(Class<T> clz) throws Exception {
+    public <T> String from(Class<T> clz) {
         return new Gson().toJson(bean, clz);
     }
 

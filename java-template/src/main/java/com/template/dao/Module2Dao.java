@@ -2,7 +2,6 @@ package com.template.dao;
 
 import com.template.model.Model2;
 import org.apache.ibatis.annotations.*;
-import org.apache.ibatis.mapping.ResultSetType;
 
 /**
  * Created by finley on 1/6/17.

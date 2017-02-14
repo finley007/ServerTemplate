@@ -1,6 +1,6 @@
-package com.template.core.auth.realm;
+package com.template.auth.realm;
 
-import com.template.core.auth.UserService;
+import com.template.dao.UserDao;
 import com.template.model.User;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
@@ -19,15 +19,15 @@ import javax.annotation.Resource;
 public class DBRealm extends AuthorizingRealm {
 
     @Resource
-    private UserService userService;
+    private UserDao userDao;
 
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(
             PrincipalCollection principals) {
         String username = (String) principals.getPrimaryPrincipal(); //获取用户名
         SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
-        authorizationInfo.setRoles(userService.getRoles(username));
-        authorizationInfo.setStringPermissions(userService.getPermissions(username));
+        authorizationInfo.setRoles(userDao.getRoles(username));
+        authorizationInfo.setStringPermissions(userDao.getPermissions(username));
         return authorizationInfo;
     }
 
@@ -35,7 +35,7 @@ public class DBRealm extends AuthorizingRealm {
     protected AuthenticationInfo doGetAuthenticationInfo(
             AuthenticationToken token) throws AuthenticationException {
         String username = (String) token.getPrincipal(); // 获取用户名
-        User user = userService.getUserByName(username);
+        User user = userDao.getUserByName(username);
         if(user != null) {
             AuthenticationInfo authcInfo = new SimpleAuthenticationInfo(user.getUsername(), user.getPassword(), "myRealm");
             return authcInfo;
