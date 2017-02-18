@@ -1,5 +1,6 @@
 package com.template.auth;
 
+import com.template.core.annotation.Validate;
 import com.template.core.exception.BusinessException;
 import com.template.core.exception.SystemException;
 import com.template.core.log.LogUtil;
@@ -10,6 +11,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.annotation.Resource;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -24,16 +26,13 @@ import javax.ws.rs.core.Response;
 @Path("/auth")
 public class Auth {
 
+    @Resource
     private AuthService authService;
-
-    @Autowired(required = true)
-    public void setAuthService(@Qualifier("authService")AuthService service) {
-        this.authService = service;
-    }
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
+    @Validate
     public Response auth(@RequestParam String request) {
         LogUtil.info(this.getClass(), "Do authentication for user: {} ", request);
         try {

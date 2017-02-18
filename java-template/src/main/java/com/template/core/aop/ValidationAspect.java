@@ -24,7 +24,7 @@ public class ValidationAspect {
     @Before(value="execution(* com.template..*Service.*(..)) && @annotation(validate)", argNames="validate")
     public void validate(JoinPoint aPoint, Validate validate) throws BusinessException {
         LogUtil.debug(this.getClass(), "Do validation for service: {} and action: {}",
-                new Object[]{aPoint.getTarget().getClass(), aPoint.getSignature()});
+                new Object[]{aPoint.getTarget().getClass(), aPoint.getSignature().getName()});
         Object arg = aPoint.getArgs()[0];
         if (arg == null) {
             throw new NullRequestException("The request is null");
@@ -35,7 +35,7 @@ public class ValidationAspect {
             for (ConstraintViolation violation : violations) {
                 LogUtil.debug(this.getClass(), violation.getMessage());
             }
-            throw new InvalidRequestException("Invalid request: ");
+            throw new InvalidRequestException("Invalid request: " + violations.get(0).getMessage());
         }
     }
 
