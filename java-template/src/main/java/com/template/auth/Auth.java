@@ -1,15 +1,9 @@
 package com.template.auth;
 
-import com.template.core.annotation.Validate;
-import com.template.core.exception.BusinessException;
-import com.template.core.exception.ExceptionHandler;
-import com.template.core.exception.SystemException;
 import com.template.core.LogUtil;
 import com.template.core.Payload;
-import com.template.core.response.ErrorResponse;
+import com.template.core.exception.ExceptionHandler;
 import com.template.core.response.ResponseWrapper;
-import com.template.exception.AuthenticationErrorException;
-import com.template.exception.SystemErrorException;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestParam;
 

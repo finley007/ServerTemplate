@@ -3,6 +3,8 @@ package com.template.core.aop;
 import com.template.core.annotation.Secured;
 import com.template.core.Token;
 import com.template.core.LogUtil;
+import com.template.core.exception.ExceptionHandler;
+import com.template.exception.UnauthorizedException;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -35,7 +37,8 @@ public class AuthAspect {
                 LogUtil.error(this.getClass(), "Execute service error: ", throwable);
             }
         }
-        return Response.status(Response.Status.UNAUTHORIZED).entity("{message:error}").build();
+        String res = ExceptionHandler.handle(new UnauthorizedException("Unauthorized error"));
+        return Response.status(Response.Status.UNAUTHORIZED).entity(res).build();
     }
 
 }
