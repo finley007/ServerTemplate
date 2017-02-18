@@ -5,38 +5,11 @@ package com.template.auth;
  */
 public class AuthResponse {
 
-    public AuthResponse(int code, String message) {
-        this.code = code;
-        this.message = message;
-    }
-
-    public AuthResponse(int code, String message, String token) {
-        this.code = code;
-        this.message = message;
+    public AuthResponse(String token) {
         this.token = token;
     }
 
-    private int code;
-
-    private String message;
-
     private String token;
-
-    public int getCode() {
-        return code;
-    }
-
-    public void setCode(int code) {
-        this.code = code;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
 
     public String getToken() {
         return token;
@@ -45,4 +18,5 @@ public class AuthResponse {
     public void setToken(String token) {
         this.token = token;
     }
+
 }

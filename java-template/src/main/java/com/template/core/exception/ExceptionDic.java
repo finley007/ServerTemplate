@@ -1,7 +1,7 @@
 package com.template.core.exception;
 
-import com.template.core.config.ConfigService;
-import com.template.core.context.ApplicationContextProvider;
+import com.template.core.ConfigService;
+import com.template.core.CtxProvider;
 import com.template.core.tool.Dictionary;
 import org.apache.commons.lang3.StringUtils;
 
@@ -17,7 +17,7 @@ public class ExceptionDic implements Dictionary<String> {
     public static final String NAME = "exception";
 
     public ExceptionDic() {
-        ConfigService configService = ApplicationContextProvider.getContext().getBean(ConfigService.class);
+        ConfigService configService = CtxProvider.getContext().getBean(ConfigService.class);
         List<Map> list = configService.getExceptionCode();
         exDic_ = new HashMap<String, String>();
         for (Map map : list) {

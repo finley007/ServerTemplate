@@ -2,12 +2,14 @@ package com.template.auth;
 
 import com.template.core.annotation.Validate;
 import com.template.core.exception.BusinessException;
+import com.template.core.exception.ExceptionHandler;
 import com.template.core.exception.SystemException;
-import com.template.core.log.LogUtil;
-import com.template.core.payload.Payload;
+import com.template.core.LogUtil;
+import com.template.core.Payload;
 import com.template.core.response.ErrorResponse;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+import com.template.core.response.ResponseWrapper;
+import com.template.exception.AuthenticationErrorException;
+import com.template.exception.SystemErrorException;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -32,18 +34,15 @@ public class Auth {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    @Validate
     public Response auth(@RequestParam String request) {
         LogUtil.info(this.getClass(), "Do authentication for user: {} ", request);
         try {
             AuthResponse response = this.authService.authenticate(new Payload(request).as(AuthRequest.class));
-            return Response.status(Response.Status.OK).entity(new Payload(response).from(AuthResponse.class)).build();
-        } catch (SystemException e) {
-            return Response.status(Response.Status.OK).entity(new ErrorResponse(e.toString()).build()).build();
-        } catch (BusinessException e) {
-            return Response.status(Response.Status.OK).entity(new ErrorResponse(e.toString()).build()).build();
+            return Response.status(Response.Status.OK).entity(new ResponseWrapper(response).build(AuthResponse.class)).build();
         } catch (Throwable t) {
-            return Response.status(Response.Status.OK).entity(new ErrorResponse(t.getMessage()).build()).build();
+            LogUtil.error(this.getClass(), "Authentication failed: ", t);
+            String res = ExceptionHandler.handle(t);
+            return Response.status(Response.Status.OK).entity(res).build();
         }
     }
 

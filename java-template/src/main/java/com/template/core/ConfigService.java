@@ -1,4 +1,4 @@
-package com.template.core.config;
+package com.template.core;
 
 import com.template.core.dao.ConfigDao;
 import org.springframework.beans.factory.annotation.Autowired;

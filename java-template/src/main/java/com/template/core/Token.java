@@ -1,4 +1,4 @@
-package com.template.core.token;
+package com.template.core;
 
 import com.template.core.tool.Properties;
 import org.apache.shiro.subject.Subject;

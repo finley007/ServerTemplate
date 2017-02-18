@@ -4,7 +4,10 @@ package com.template.core.exception;
  * Created by finley on 2/8/17.
  */
 public class SystemException extends BaseException {
-    public SystemException(String msg) {
+
+    public SystemException(Throwable t, String msg) {
         super(msg);
+        this.initCause(t);
     }
+
 }

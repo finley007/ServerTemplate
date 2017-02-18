@@ -1,4 +1,4 @@
-package com.template.core.payload;
+package com.template.core;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;

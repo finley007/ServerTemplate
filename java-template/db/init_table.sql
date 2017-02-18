@@ -35,7 +35,7 @@ create table user_role (
     FOREIGN KEY(role) REFERENCES roles(role)
 );
 
-insert into exception_code ()
+insert into exception_code values ('com.template.exception.InvalidRequestException', '10001');
 insert into users (username, password, create_time) values ('admin', 'admin', current_timestamp());
 insert into roles values ('admin', 0, '');
 insert into user_role (username, role) values ('admin', 'admin');

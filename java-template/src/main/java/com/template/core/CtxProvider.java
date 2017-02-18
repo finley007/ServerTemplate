@@ -1,4 +1,4 @@
-package com.template.core.context;
+package com.template.core;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  * Created by finley on 2/13/17.
  */
 @Component
-public class ApplicationContextProvider implements ApplicationContextAware {
+public class CtxProvider implements ApplicationContextAware {
 
     private static ApplicationContext context;
 

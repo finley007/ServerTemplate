@@ -1,29 +1,19 @@
 package com.template.core.response;
 
-import com.template.core.payload.Payload;
+import com.template.core.exception.BaseException;
 
 /**
- * Created by finley on 2/7/17.
+ * Created by finley on 2/18/17.
  */
-public class ErrorResponse extends Response {
+public class ErrorResponse {
 
-    public ErrorResponse(String errorMsg) {
-        this.setResult(Result.Error);
-        this.errorMsg = errorMsg;
-    }
+    private String returnCode;
 
-    public void setErrorMsg(String errorMsg) {
-        this.errorMsg = errorMsg;
-    }
+    private String message;
 
-    private String errorMsg;
-
-    public String getContent() {
-        return this.errorMsg;
-    }
-
-    public String build() {
-        return new Payload(this).from(this.getClass());
+    public ErrorResponse(BaseException e) {
+        this.message = e.getMessage();
+        this.returnCode = e.getCode();
     }
 
 }

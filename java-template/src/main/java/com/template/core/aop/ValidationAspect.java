@@ -2,7 +2,7 @@ package com.template.core.aop;
 
 import com.template.core.annotation.Validate;
 import com.template.core.exception.BusinessException;
-import com.template.core.log.LogUtil;
+import com.template.core.LogUtil;
 import com.template.exception.InvalidRequestException;
 import com.template.exception.NullRequestException;
 import net.sf.oval.ConstraintViolation;
