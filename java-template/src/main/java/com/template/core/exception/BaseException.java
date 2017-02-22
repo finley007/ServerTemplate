@@ -1,11 +1,6 @@
 package com.template.core.exception;
 
-import com.google.gson.Gson;
-import com.template.core.tool.Dictionary;
 import com.template.core.tool.DictionaryManager;
-
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Created by finley on 2/8/17.

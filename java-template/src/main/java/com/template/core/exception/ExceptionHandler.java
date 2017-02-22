@@ -1,11 +1,8 @@
 package com.template.core.exception;
 
-import com.template.core.LogUtil;
 import com.template.core.response.ErrorResponse;
 import com.template.core.response.ResponseWrapper;
 import com.template.exception.SystemErrorException;
-
-import javax.ws.rs.core.Response;
 
 /**
  * Created by finley on 2/18/17.

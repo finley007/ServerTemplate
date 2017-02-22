@@ -20,7 +20,7 @@ public class AuthServiceImpl implements AuthService {
 
     @Validate
     public AuthResponse authenticate(AuthRequest request) throws Exception {
-        LogUtil.info(this.getClass(), "Do authtication");
+        LogUtil.info(this.getClass(), "Do authentication");
         UsernamePasswordToken token = new UsernamePasswordToken(request.getUsername(), request.getPassword());
        // token.setRememberMe(true);
         Subject currentUser = SecurityUtils.getSubject();
